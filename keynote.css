@@ -300,3 +300,5 @@ html[data-edition="partner"] .chain a { font-size: 12px; }
   html[data-edition="partner"] .stage { padding-top: 68px; }
 }
 html[data-edition="partner"] .eqtex { display: none; }
+@media (min-width: 821px) { html[data-edition="partner"] .stage svg.viz { max-height: calc(100vh - 200px); } }
+html[data-edition="partner"] #s02 figcaption { display: none; }
