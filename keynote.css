@@ -299,3 +299,4 @@ html[data-edition="partner"] .chain a { font-size: 12px; }
   html[data-edition="partner"] .story p { font-size: 15.5px; }
   html[data-edition="partner"] .stage { padding-top: 68px; }
 }
+html[data-edition="partner"] .eqtex { display: none; }
