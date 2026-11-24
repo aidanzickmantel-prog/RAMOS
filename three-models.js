@@ -418,7 +418,7 @@
           const vis = v.z < 1 && v.x > -1.05 && v.x < 1.05 && v.y > -1.05 && v.y < 1.05 && (!l.show || (p >= l.show[0] && p <= l.show[1]));
           l.el.style.opacity = vis ? 1 : 0;
           const x = (v.x + 1) / 2 * w, y = (1 - v.y) / 2 * h;
-          if (!l.bw) { l.bw = l.el.offsetWidth; l.bh = l.el.offsetHeight; }
+          if (!(l.bw > 10)) { l.bw = l.el.offsetWidth; l.bh = l.el.offsetHeight; }
           if (vis) placed.push({ l, x, y, ty: y });
           else l.el.style.transform = `translate(${x.toFixed(1)}px,${y.toFixed(1)}px) translate(-50%,-100%)`;
         });
@@ -434,7 +434,8 @@
           }
           boxes.push({ x: o.x, ty, w: bw, h: bh });
           const lift = o.y - ty;
-          o.l.el.style.transform = `translate(${o.x.toFixed(1)}px,${ty.toFixed(1)}px) translate(-50%,-100%)`;
+          const cx = Math.min(Math.max(o.x, bw / 2 + 8), w - bw / 2 - 8);
+          o.l.el.style.transform = `translate(${cx.toFixed(1)}px,${ty.toFixed(1)}px) translate(-50%,-100%)`;
           o.l.el.style.setProperty('--lift', (10 + lift).toFixed(0) + 'px');
         });
       }
