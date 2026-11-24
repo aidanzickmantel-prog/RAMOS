@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en" data-edition="committee" data-theme="dark" data-look="keynote">
+<html lang="en" data-edition="partner" data-theme="dark" data-look="keynote">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#000000">
-<title>RAMOS</title>
-<meta name="description" content="RAMOS, a spatial decision engine for residues in mainland Portugal. A methods showcase from a PhD at IN+, Instituto Superior Técnico.">
+<title>RAMOS for LandOS</title>
+<meta name="description" content="RAMOS, a national planning engine for residues in mainland Portugal: where every tonne arises, what limits apply, and which pathway should take it. Built at IN+, Instituto Superior Técnico.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/keynote.css">
-<script src="js/config.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="keynote.css">
+<script src="config.js"></script>
 <script>document.documentElement.dataset.edition = (window.RAMOS_CONFIG && RAMOS_CONFIG.EDITION) || 'committee'; document.documentElement.dataset.look = 'keynote'; document.documentElement.dataset.theme = 'dark';</script>
 </head>
 <body>
 <a class="skip" href="#s01">Skip to the story</a>
 <nav class="rail" id="rail" aria-label="Acts"></nav>
 <nav class="chain" id="chain" aria-label="Where you are in the model"></nav>
-<div class="topbar"><span class="edition-tag" data-collab>Committee version, private</span></div>
+<div class="topbar"></div>
 
 <main id="story">
 
@@ -456,7 +456,7 @@
    <h2 id="s18-h"><span data-not-partner>The auction</span><span data-partner>Carbon price and biochar viability</span></h2>
    <div data-not-partner>
    <p class="lede">Think of each tonne as up for sale. Every pathway makes an offer: the most it could pay for that tonne and still break even. The best offer above zero takes it. If nobody can pay, the tonne stays on the farm.</p>
-   <div><p>A carbon price changes the offers. Biochar locks carbon away, so its offer climbs as the price rises. In one olive zone it starts winning <!--collab--><span data-collab>somewhere between <span class="n" data-l="L074"></span></span><!--/collab--><span data-public>at some carbon price</span>. That crossing price is the answer RAMOS gives, per feedstock and per place.</p></div>
+   <div><p>A carbon price changes the offers. Biochar locks carbon away, so its offer climbs as the price rises. In one olive zone it starts winning <span data-public>at some carbon price</span>. That crossing price is the answer RAMOS gives, per feedstock and per place.</p></div>
    </div>
    <div data-partner>
    <p class="lede">Across today's carbon removal prices (108 to 130 EUR/t), the payable share of the olive biochar pool barely moves. Just above the top of that range it climbs steeply.</p>
@@ -466,7 +466,7 @@
   </div>
   <div class="stage" data-alt="A headline answers who gets one tonne of olive prunings. Left, a podium of offers around a break-even line: biochar, biomethane and leave it on the farm, with the tonne and a WINS badge on the best offer. Right, a chart of offer against carbon price from 0 to 300 euros: biochar rises and crosses zero between 150 and 200, biomethane stays flat below zero, and the area where biochar wins is shaded. As you scroll the price marker moves and the tonne moves from leave it to biochar. Gasification and compost show NO INFO.">
    <figure><svg class="viz" id="v-s18"></svg>
-    <figcaption><span data-not-partner><!--collab--><span data-collab>Illustrative, engine run 6da1854, one Alentejo olive zone, values still moving. </span><!--/collab--><span data-public>Illustrative zone, bars without values. </span>Avoided emissions are not monetised in bids yet, which tilts the auction towards biochar as the carbon price rises.</span><span data-partner>Schematic of the shape only. Olive zones. Updated shares follow the engine correction of 24 Nov.</span></figcaption>
+    <figcaption><span data-not-partner><span data-public>Illustrative zone, bars without values. </span>Avoided emissions are not monetised in bids yet, which tilts the auction towards biochar as the carbon price rises.</span><span data-partner>Schematic of the shape only. Olive zones. Updated shares follow the engine correction of 24 Nov.</span></figcaption>
    </figure>
   </div>
  </div>
@@ -591,8 +591,7 @@
  <p>Residue, Allocation, Mapping, Optimisation, Sustainability. A spatial decision engine for mainland Portugal, in the thesis <em>The Land's Metabolism</em>. Working name.</p>
  <p>Aido (Aidan Donevan) Zickmantel, PhD in Sustainable Energy Systems, IN+ Center for Innovation, Technology and Policy Research, Instituto Superior Técnico, Universidade de Lisboa. Supervisor: Joana Portugal-Pereira.</p>
  <p>Data: ICNF, IFAP, DGT, INE, APA, DGEG, EEA, Copernicus, OpenStreetMap contributors (ODbL). Boundaries from CAOP 2025.</p>
- <p>Status labels: numbers without a label are confirmed. <span class="chip prov">provisional</span> may move. <span class="chip wip">work in progress</span> is designed or being coded. <span class="chip illus">illustrative</span> is a worked example, not a result. <span class="noinfo">NO INFO</span> means no reliable value exists.</p>
- <p data-collab>Committee version, shared privately. Collaborator-only elements are shown with their flags. Not for public distribution.</p>
+ <p>Status labels: numbers without a label are confirmed. <span class="chip prov">provisional</span> may still move. <span class="noinfo">NO INFO</span> means no reliable value exists yet.</p>
 </footer>
 
 <div class="scrim" id="scrim"></div>
@@ -601,15 +600,15 @@
  <div class="body" id="method-body"></div>
 </aside>
 
-<script src="data/ledger.js"></script>
-<script src="data/equations.js"></script>
-<script src="js/method-content.js"></script>
-<script src="js/core.js"></script>
-<script src="js/scenes-1.js"></script>
-<script src="js/scenes-2.js"></script>
-<script src="js/partner.js"></script>
+<script src="ledger.js"></script>
+<script src="equations.js"></script>
+<script src="method-content.js"></script>
+<script src="core.js"></script>
+<script src="scenes-1.js"></script>
+<script src="scenes-2.js"></script>
+<script src="partner.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="js/three-models.js"></script>
-<script src="js/three-scenes.js"></script>
+<script src="three-models.js"></script>
+<script src="three-scenes.js"></script>
 </body>
 </html>

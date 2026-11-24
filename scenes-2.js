@@ -148,7 +148,7 @@
     svg.setAttribute('viewBox', `0 0 ${C.W} ${C.H}`);
     svg.classList.add('clscale');
     const g = S('g', null, svg);
-    S('image', { href: 'img/cluster_hillshade.jpg', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: `opacity:${opts && opts.hs || .45}` }, g);
+    S('image', { href: 'cluster_hillshade.jpg', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: `opacity:${opts && opts.hs || .45}` }, g);
     const roads = S('g', null, g);
     S('path', { d: C.road_track, style: 'fill:none;stroke:var(--f-manure);stroke-width:.7;opacity:.45' }, roads);
     S('path', { d: C.road_local, style: 'fill:none;stroke:var(--ink-2);stroke-width:.7;opacity:.45' }, roads);

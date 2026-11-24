@@ -146,7 +146,7 @@
       if (D[n]) return Promise.resolve();
       if (!loading[n]) loading[n] = new Promise((res, rej) => {
         const s = document.createElement('script');
-        s.src = 'data/' + n + '.js';
+        s.src = n + '.js';
         s.onload = res; s.onerror = () => { console.error('[RAMOS] failed to load', n); rej(n); };
         document.head.appendChild(s);
       });

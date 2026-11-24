@@ -902,8 +902,8 @@
         S('text', { x: X0 + afterSoil * K, y: Y + H + 22, 'text-anchor': 'middle', style: 'font-size:13px;fill:var(--muted)', text: 'soil' }, A);
         // ---- phase B: where the hard limits fall ----
         const B = st.B = S('g', { style: 'opacity:0' }, svg);
-        S('image', { href: 'img/cluster_hillshade.jpg', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: 'opacity:.55' }, B);
-        st.steep = S('image', { href: 'img/cluster_steep.png', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: 'opacity:0' }, B);
+        S('image', { href: 'cluster_hillshade.jpg', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: 'opacity:.55' }, B);
+        st.steep = S('image', { href: 'cluster_steep.png', x: 0, y: 0, width: C.W, height: C.H, preserveAspectRatio: 'none', style: 'opacity:0' }, B);
         st.prot = S('g', { style: 'opacity:0' }, B);
         C.protected.forEach(pa => S('path', { d: pa.d, style: `fill:${hatch};stroke:var(--f-forest);stroke-width:1.5` }, st.prot));
         C.munis.forEach(m => {
