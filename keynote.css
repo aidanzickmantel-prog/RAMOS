@@ -270,3 +270,32 @@ html[data-edition="partner"] .l3.wip { border-style: solid; border-color: var(--
 .pb-st { transition: fill .5s; }
 .pb-flame { transform-box: fill-box; transform-origin: 50% 100%; animation: pbflick 1.4s ease-in-out infinite alternate; }
 @keyframes pbflick { 0% { transform: scaleY(.92); } 50% { transform: scaleY(1.06) skewX(2deg); } 100% { transform: scaleY(.97) skewX(-2deg); } }
+
+/* ---------- partner polish: layout, rhythm, quieter chrome ---------- */
+html[data-edition="partner"] .kicker { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #ff9f43; margin-bottom: 14px; }
+html[data-edition="partner"] .method-btn { margin-top: 18px; min-height: 38px; font-size: 14px; padding: 0 16px; }
+html[data-edition="partner"] .stage figcaption, html[data-edition="partner"] .caption { margin-top: 14px; font-size: 12.5px; line-height: 1.5; color: #6e6e73; max-width: 680px; flex: none; }
+html[data-edition="partner"] .v3 { border-radius: 22px; overflow: hidden; background: radial-gradient(ellipse at 50% 20%, #1c1f24 0%, #0c0d10 70%); border: 1px solid #1f1f22; }
+/* quieter chrome */
+html[data-edition="partner"] .rail a { width: 2px !important; opacity: .55; }
+html[data-edition="partner"] .rail a[aria-current="true"] { opacity: 1; }
+html[data-edition="partner"] .chain { transition: opacity .4s; }
+html[data-edition="partner"] .chain a { font-size: 12px; }
+@media (min-width: 821px) {
+  html[data-edition="partner"] .scene .pin { grid-template-columns: minmax(380px, 33%) 1fr; column-gap: 8px; }
+  html[data-edition="partner"] .story { padding: 64px 40px 40px 80px; max-width: 540px; }
+  html[data-edition="partner"] .story h2 { font-size: clamp(34px, 3.3vw, 54px); line-height: 1.05; margin-bottom: 20px; text-wrap: balance; }
+  html[data-edition="partner"] #s01 .story h2 { font-size: clamp(32px, 2.9vw, 46px); }
+  html[data-edition="partner"] .stage { padding: 76px 56px 36px 0; }
+  html[data-edition="partner"] .stage figure { justify-content: center; gap: 0; }
+  html[data-edition="partner"] .panel-in { padding-top: 72px; padding-bottom: 40px; }
+  html[data-edition="partner"] .story .lede { font-size: 19px; line-height: 1.42; margin-bottom: 14px; text-wrap: pretty; }
+  html[data-edition="partner"] .story p { font-size: 16.5px; line-height: 1.55; text-wrap: pretty; }
+}
+@media (min-width: 821px) and (max-height: 820px) {
+  html[data-edition="partner"] .story { padding-top: 60px; }
+  html[data-edition="partner"] .story h2 { font-size: clamp(30px, 3vw, 46px); }
+  html[data-edition="partner"] .story .lede { font-size: 17.5px; }
+  html[data-edition="partner"] .story p { font-size: 15.5px; }
+  html[data-edition="partner"] .stage { padding-top: 68px; }
+}
