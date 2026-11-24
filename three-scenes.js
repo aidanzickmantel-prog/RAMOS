@@ -1326,11 +1326,11 @@
       S('rect', { x: 0, y: 0, width: Cl.W, height: Cl.H, rx: 30, style: 'fill:var(--panel);stroke:var(--line);stroke-width:6' }, c.inset);
       Cl.munis.forEach(m => S('path', { d: m.d, style: 'fill:var(--land);stroke:var(--ink-2);stroke-width:4' }, c.inset));
       Cl.protected.forEach(pa => S('path', { d: pa.d, style: `fill:${hatch};stroke:var(--f-forest);stroke-width:6` }, c.inset));
-      fo(svg, 826, 470, 94, 80, '<span class="fo-xs">protected: no collection</span>');
+      c.plab = fo(svg, 826, 470, 94, 80, '<span class="fo-xs">protected: no collection</span>');
     },
     overlay(c, p) {
       c.dials.forEach((g, i) => g.style.opacity = seg(p, .55 + i * .07, .65 + i * .07));
-      c.stat.style.opacity = seg(p, .75, .82); c.inset.style.opacity = seg(p, .8, .88);
+      c.stat.style.opacity = seg(p, .75, .82); c.inset.style.opacity = seg(p, .8, .88); c.plab.style.opacity = c.inset.style.opacity;
     },
     update(c, p, t) {
       const a = lerp(-.55, .25, p);
