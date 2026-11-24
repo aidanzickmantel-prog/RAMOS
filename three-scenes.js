@@ -697,7 +697,7 @@
         [R.num('L059') * R.num('L060') * R.num('L061'), 'carbon in char', (R.num('L059') * R.num('L060') * R.num('L061')).toFixed(4) + ' t', 'var(--p-char)'],
         [R.num('L063'), 'CO2e in char', R.part('L063') + ' t', 'var(--good)']
       ];
-      fo(svg, x0 - 10, 392, 450, 30, `<span class="fo-xs">One wet tonne in, t at each step ${R.chipHTML('L063')}</span>`);
+      fo(svg, x0 - 10, R.isPartner ? 366 : 392, 450, 30, `<span class="fo-xs">One wet tonne in, t at each step ${R.chipHTML('L063')}</span>`);
       S('line', { x1: x0 - 10, x2: 955, y1: base, y2: base, style: 'stroke:var(--ink-2);stroke-width:1.5' }, svg);
       c.bars = []; c.blabs = [];
       vals.forEach(([v, name, html, col], i) => {
@@ -707,9 +707,9 @@
         S('text', { x: x + 27, y: base + 20, 'text-anchor': 'middle', class: 'lbl-s', style: 'font-size:13px', text: name }, svg);
         c.blabs.push(fo(svg, x - 20, base - v * k - 28, 94, 28, `<span class="fo-xs" style="display:block;text-align:center;font-weight:600;color:var(--ink)">${html}</span>`));
       });
-      stat(svg, 14, 500, 460, 96, `<span class="fo-xs">1 wet tonne × ${R.N('L059', { unit: 'DM' })} × ${R.N('L060', { unit: 'char yield' })} × ${R.N('L061', { unit: 'C' })} × ${R.N('L062', { unit: '' })} = ${R.N('L063')}. Char and carbon bars are computed from these.</span>`);
+      if (!R.isPartner) stat(svg, 14, 500, 460, 96, `<span class="fo-xs">1 wet tonne × ${R.N('L059', { unit: 'DM' })} × ${R.N('L060', { unit: 'char yield' })} × ${R.N('L061', { unit: 'C' })} × ${R.N('L062', { unit: '' })} = ${R.N('L063')}. Char and carbon bars are computed from these.</span>`);
       const mx = 30, my = 428, mw = 400;
-      S('text', { x: mx, y: my - 12, style: 'font-weight:600;font-size:16px', text: 'Moisture envelope, % wet basis' }, svg);
+      S('text', { x: mx, y: my - (R.isPartner ? 26 : 12), style: 'font-weight:600;font-size:16px', text: 'Moisture envelope, % wet basis' }, svg);
       const pct = v => mx + v / 60 * mw;
       const A = R.num('L065', 0), B = R.num('L065', 2), Cc = R.num('L065', 3);
       S('rect', { x: pct(0), y: my, width: pct(A) - pct(0), height: 18, style: 'fill:var(--good);opacity:.6' }, svg);
@@ -717,7 +717,7 @@
       S('rect', { x: pct(Cc), y: my, width: pct(60) - pct(Cc), height: 18, style: 'fill:var(--fire);opacity:.6' }, svg);
       c.marker = S('path', { d: 'M0,-4 L-7,-16 L7,-16 Z', style: 'fill:var(--ink)' }, svg);
       c.mk = { from: R.num('L066', 0), to: R.num('L066', 1), mx, mw, my };
-      fo(svg, mx - 10, my + 22, 450, 56, `<span class="fo-xs">${R.N('L065', { unit: '' })}<br>Olive prunings through the season ${R.N('L066')}</span>`);
+      fo(svg, mx - 10, my + 22, 450, R.isPartner ? 90 : 56, `<span class="fo-xs">${R.N('L065', { unit: '' })}<br>Olive prunings through the season ${R.N('L066')}</span>`);
     },
     overlay(c, p) {
       c.bars.forEach((r, i) => {
@@ -1196,8 +1196,8 @@
       if (!c.svg) return;
 
       // overlay: permanence chart and the two separate counters
-      const svg = c.svg; svg.setAttribute('viewBox', '0 0 920 580');
-      const ox = 490, oy = 400, w = 400, h = 300;
+      const svg = c.svg; svg.setAttribute('viewBox', R.isPartner ? '0 0 920 610' : '0 0 920 580');
+      const ox = 490, oy = 400, w = 400, h = 300, LG = R.isPartner ? [oy - 156, 42, 50] : [oy - 118, 36, 36];
       S('path', { d: `M${ox},${oy - h} L${ox},${oy} L${ox + w},${oy}`, style: 'fill:none;stroke:var(--ink-2);stroke-width:1.5' }, svg);
       [0, 100, 200].forEach(y => S('text', { x: ox + y / 200 * w, y: oy + 22, 'text-anchor': 'middle', class: 'lbl-s', style: 'font-size:14px', text: y + ' yr' }, svg));
       S('text', { x: ox - 8, y: oy - h - 10, class: 'lbl-s', style: 'font-size:14px', text: 'share of char carbon still stored' }, svg);
@@ -1207,18 +1207,18 @@
         for (let tt = 0; tt <= Tt; tt += 4) { const y = shape === 'fast' ? 1 - (1 - end) * (1 - Math.exp(-tt / 25)) / (1 - Math.exp(-Tt / 25)) : 1 - (1 - end) * tt / Tt; d += (tt ? 'L' : 'M') + (ox + tt / 200 * w).toFixed(1) + ',' + (oy - y * h).toFixed(1); }
         const pth = S('path', { d, style: `fill:none;stroke:${col};stroke-width:3` }, svg);
         const L = pth.getTotalLength(); pth.style.strokeDasharray = L; pth.style.strokeDashoffset = L;
-        const lab = fo(svg, ox + 14, oy - 118 + c.curves.length * 36, 390, 36, `<span class="fo-s"><span style="display:inline-block;width:18px;height:4px;vertical-align:4px;background:${col}"></span> ${name}</span> ${R.N(id, { unit: '' })}`);
+        const lab = fo(svg, ox + 14, LG[0] + c.curves.length * LG[1], 400, LG[2], `<span class="fo-s"><span style="display:inline-block;width:18px;height:4px;vertical-align:4px;background:${col}"></span> ${name}</span> ${R.N(id, { unit: '' })}`);
         c.curves.push([pth, L, lab, Tt]);
       };
       mk(R.num('L084'), 200, 'var(--p-gas)', 'EU credit, 200 yr', 'L084');
       mk(R.num('L083'), 100, 'var(--good)', 'physical, 100 yr', 'L083', 'fast');
       const yP = oy - R.num('L085') * h;
       const pl = S('line', { x1: ox, x2: ox + 40, y1: yP, y2: yP, style: 'stroke:var(--f-vine);stroke-width:3;stroke-dasharray:5 4' }, svg);
-      const plab = fo(svg, ox + 14, oy - 118 + 72, 390, 36, `<span class="fo-s"><span style="display:inline-block;width:18px;height:4px;vertical-align:4px;background:var(--f-vine)"></span> submitted paper composite, tick at left</span> ${R.N('L085', { unit: '' })}`);
+      const plab = fo(svg, ox + 14, LG[0] + 2 * LG[1], 400, LG[2], `<span class="fo-s"><span style="display:inline-block;width:18px;height:4px;vertical-align:4px;background:var(--f-vine)"></span> submitted paper composite, tick at left</span> ${R.N('L085', { unit: '' })}`);
       c.curves.push([pl, 0, plab, 0]);
       c.tl = S('line', { x1: ox, x2: ox, y1: oy - h, y2: oy, style: 'stroke:var(--ink);stroke-width:1;opacity:.6' }, svg);
-      stat(svg, 16, 440, 430, 130, `<strong>Removed</strong>, per wet tonne<br>${R.N('L064', { part: 0, unit: 't CO2e stored after 100 yr', nochip: true })}<br>${R.N('L064', { part: 1, unit: 't CO2e net of plant operation' })}`);
-      stat(svg, 470, 440, 434, 130, `<strong>Avoided</strong>, kept in its own column<br>${R.noinfo()}<br><span class="fo-s">Never added to removals. H/C<sub>org</sub> gate and olive char ${R.N('L086', { unit: '' })}. Beats chips on soil after ${R.N('L087')}.</span>`);
+      stat(svg, 16, 440, 430, R.isPartner ? 160 : 130, `<strong>Removed</strong>, per wet tonne<br>${R.N('L064', { part: 0, unit: 't CO2e stored after 100 yr', nochip: true })}<br>${R.N('L064', { part: 1, unit: 't CO2e net of plant operation' })}`);
+      stat(svg, 470, 440, 434, R.isPartner ? 160 : 130, `<strong>Avoided</strong>, kept in its own column<br>${R.noinfo()}<br><span class="fo-s">Never added to removals. H/C<sub>org</sub> gate and olive char ${R.N('L086', { unit: '' })}. Beats chips on soil after ${R.N('L087')}.</span>`);
     },
     overlay(c, p) {
       const t = seg(p, .1, .85);
