@@ -1,4 +1,4 @@
-/* RAMOS partner edition: the LandOS carbon price slider. Four observed rungs only (L126). */
+/* RAMOS partner edition: carbon price slider (unused). Four observed rungs only (L126). */
 (function () {
   'use strict';
   const R = window.RAMOS;
