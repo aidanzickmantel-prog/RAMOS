@@ -569,7 +569,7 @@
       // label anchors follow the rig
       if (c.labels) {
         c.labels.update(cam, p);
-        const proj = (el, v) => { const w = c.host.clientWidth, h = c.host.clientHeight; const pv = v.clone().project(cam); el.style.transform = `translate(${((pv.x + 1) / 2 * w).toFixed(1)}px,${((1 - pv.y) / 2 * h).toFixed(1)}px) translate(-50%,-100%)`; el.style.opacity = pv.z < 1 ? 1 : 0; };
+        const proj = (el, v) => { const w = c.host.clientWidth, h = c.host.clientHeight; const pv = v.clone().project(cam); const bw = el.offsetWidth + 6, x = Math.min(Math.max((pv.x + 1) / 2 * w, bw / 2 + 8), w - bw / 2 - 8); el.style.transform = `translate(${x.toFixed(1)}px,${((1 - pv.y) / 2 * h).toFixed(1)}px) translate(-50%,-100%)`; el.style.opacity = pv.z < 1 ? 1 : 0; };
         proj(c.lab[0], new T.Vector3(tx - .5, 3.9, 0));
         proj(c.lab[1], c.ch.position.clone().add(new T.Vector3(-.3, 3.3, 0)));
         c.lab[2].style.opacity = 1 - seg(p, .45, .55);
