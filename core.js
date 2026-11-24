@@ -269,7 +269,7 @@
     const st = sections[idx] && sections[idx].el.dataset.stage;
     const si = STAGES.findIndex(x => x[0] === st);
     const nav = document.getElementById('chain');
-    if (nav) nav.style.opacity = st ? 1 : 0;
+    if (nav) nav.style.opacity = st && !(R.isPartner && st === 'all') ? 1 : 0;
     chainLinks.forEach(([k, a], i) => {
       a.classList.toggle('done', st === 'all' || (si >= 0 && STAGES.findIndex(x => x[0] === k) < si));
       if (k === st || st === 'all') a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
@@ -410,6 +410,7 @@
   function boot() {
     fillNumbers(document);
     document.querySelectorAll('.scene').forEach(el => {
+      if (getComputedStyle(el).display === 'none') return;
       const stage = el.querySelector('.stage');
       sections.push({ el, id: el.id, act: +el.dataset.act, stage, alt: stage ? stage.dataset.alt : '' });
       if (el.dataset.eqtex) eqTexture(el);
