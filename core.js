@@ -236,7 +236,7 @@
   }
 
   /* ---------------- rail ---------------- */
-  const ACTS = ['Why', 'Portugal', 'The parcel', 'Collection', 'The plant on the map', 'Inside the plants', 'Competition and end use', 'What it is for'];
+  const ACTS = ['Why', 'Portugal', 'The parcel', 'Collection', 'The plant on the map', 'Inside the plants', R.isPartner ? 'End use and impacts' : 'Competition and end use', 'What it is for'];
   let railLinks = [];
   function buildRail() {
     const rail = document.getElementById('rail');
@@ -255,9 +255,11 @@
   let chainLinks = [];
   function buildChain() {
     const nav = document.getElementById('chain'); if (!nav) return;
+    let shown = 0;
     STAGES.forEach(([k, name], i) => {
-      if (i) R.html('i', { 'aria-hidden': 'true' }, nav);
-      const first = sections.find(s => s.el.dataset.stage === k);
+      const first = sections.find(s => s.el.dataset.stage === k && getComputedStyle(s.el).display !== 'none');
+      if (!first && R.isPartner) return;
+      if (shown++) R.html('i', { 'aria-hidden': 'true' }, nav);
       const a = R.html('a', { href: first ? '#' + first.id : '#', text: name }, nav);
       a.addEventListener('click', e => { e.preventDefault(); if (first) goTo(sections.indexOf(first)); });
       chainLinks.push([k, a]);
@@ -269,7 +271,7 @@
     const nav = document.getElementById('chain');
     if (nav) nav.style.opacity = st ? 1 : 0;
     chainLinks.forEach(([k, a], i) => {
-      a.classList.toggle('done', st === 'all' || (si >= 0 && i < si));
+      a.classList.toggle('done', st === 'all' || (si >= 0 && STAGES.findIndex(x => x[0] === k) < si));
       if (k === st || st === 'all') a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current');
     });
   }
