@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en" data-edition="committee" data-theme="dark" data-look="keynote">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<title>RAMOS</title>
+<meta name="description" content="RAMOS, a spatial decision engine for residues in mainland Portugal. A methods showcase from a PhD at IN+, Instituto Superior Técnico.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/keynote.css">
+<script src="js/config.js"></script>
+<script>document.documentElement.dataset.edition = (window.RAMOS_CONFIG && RAMOS_CONFIG.EDITION) || 'committee'; document.documentElement.dataset.look = 'keynote'; document.documentElement.dataset.theme = 'dark';</script>
+</head>
+<body>
+<a class="skip" href="#s01">Skip to the story</a>
+<nav class="rail" id="rail" aria-label="Acts"></nav>
+<nav class="chain" id="chain" aria-label="Where you are in the model"></nav>
+<div class="topbar"><span class="edition-tag" data-collab>Committee version, private</span></div>
+
+<main id="story">
+
+<!-- ================= PARTNER: THE ENGINE IN NUMBERS ================= -->
+<section class="scene night panel" id="s00" data-act="0" data-len="1.5" aria-labelledby="s00-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">RAMOS · Residue, Allocation, Mapping, Optimisation, Sustainability</p>
+   <h2 id="s00-h" class="panel-h panel-h-xl">Every residue in Portugal. Mapped, priced and allocated where it removes the most carbon at the lowest cost.</h2>
+   <p class="panel-lede">RAMOS is a national spatial decision model for organic residues. It locates every tonne where it arises, records its current fate and the limits on its removal, and then optimises which conversion pathway receives it, where plants are sited, at what scale, and with what economic and carbon outcome.</p>
+  </div>
+ </div>
+</section>
+
+<section class="scene night panel" id="s00n" data-act="0" data-len="1.8" aria-labelledby="s00n-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">The engine in numbers</p>
+   <h2 id="s00n-h" class="sr-only">The engine in numbers</h2>
+   <div class="tiles tiles5">
+    <div class="tile"><span class="n" data-l="L118" data-unit=""></span><p>municipalities in mainland Portugal, every one modelled</p></div>
+    <div class="tile"><span class="n" data-l="L120" data-unit=""></span><p>olive, vine, nut and fruit parcels, each placed on the map with the prunings it produces</p></div>
+    <div class="tile"><span class="n" data-l="L119" data-unit=""></span><p>types of residue, from forest slash to food waste, each tracked separately</p></div>
+    <div class="tile"><span class="n" title="L125"><span class="vu"><span class="v">~2.9</span></span><span class="chip prov">provisional</span></span><p>million tonnes of dry residue produced every year by farms, forests and towns</p></div>
+    <div class="tile"><span class="n" title="L125"><span class="vu"><span class="v">~1.4</span></span><span class="chip prov">provisional</span></span><p>million tonnes of that a year that nobody already uses, so a new plant can take it</p></div>
+    <div class="tile"><span class="n" data-l="L121" data-unit=""></span><p>datasets feeding the model, from parcel maps to road networks and fire records</p></div>
+    <div class="tile"><span class="n" data-l="L122" data-part="0" data-unit=""></span><p>engine parameters such as yields, costs and emission factors, 2,114 of them traced to a published source</p></div>
+    <div class="tile"><span class="n" title="L005, 7,278,165 records"><span class="vu"><span class="v">7.3 million</span></span></span><p>official requests to burn residue in the open, 2020 to 2025</p></div>
+    <div class="tile"><span class="n" title="L006, 1975 to 2025"><span class="vu"><span class="v">50 years</span></span></span><p>of wildfire maps, 1975 to 2025, so fire history shapes the plan</p></div>
+    <div class="tile"><span class="n" title="L124, 2,993 tests collected"><span class="vu"><span class="v">~3,000</span></span></span><p>automated tests that recheck every number each time the model changes</p></div>
+   </div>
+   <p class="panel-foot">RAMOS models the full flow of residue through a national system, from source to end use.</p>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 0. WHY ================= -->
+<section class="scene night hero" id="s01" data-act="0" data-len="3" aria-labelledby="s01-h">
+ <div class="pin">
+  <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+  <div class="story">
+   <p class="kicker">Act 0 · Why</p>
+   <h2 id="s01-h"><span data-not-partner>Leftovers</span><span data-partner>Organic residues in Portugal: burned, abandoned or landfilled</span></h2>
+   <p class="hook"><span class="n" data-l="L005" data-unit=""></span><span class="hook-u">requests to burn residue in Portugal, 2020 to 2025</span></p>
+   <div data-not-partner>
+   <p class="lede">Organic waste from our farms, our forests and our own bins has three fates. It is burned, it rots, or it is buried in landfill.</p>
+   <p>Prunings go up in smoke in the field. Forest slash is left to rot and feed the next fire. Food waste ends up in landfill. Either way, the carbon those plants pulled from the air goes straight back into the atmosphere. All that hard work by plants, wasted.</p>
+   </div>
+   <div data-partner>
+   <p class="lede">Agriculture, forestry and municipalities generate millions of tonnes of organic residue each year. Most of it is not put to productive use.</p>
+   <p>Agricultural prunings are burned in the open. Forest harvest residues remain on site and add to wildfire fuel loads. Municipal biowaste is largely landfilled. In each case the biogenic carbon returns to the atmosphere and the material's value is lost.</p>
+   </div>
+   <button class="method-btn" data-method="s01" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="A dark map of mainland Portugal. Points of light flicker across the country, one per municipality, brighter where more requests to burn residue were made that month, from January 2020 to December 2025. The word RAMOS fades in at the end.">
+   <figure><svg class="viz" id="v-s01"></svg>
+    <figcaption>Glow: requests to burn residue, per municipality and month, <span class="n" data-l="L005"></span>. ICNF burning request records, aggregated, never individual points. <span id="s01-month" aria-live="off"></span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section data-not-partner class="scene" id="s02a" data-act="0" data-len="3.6" aria-labelledby="s02a-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 0 · Why</p>
+   <h2 id="s02a-h">Burned, buried, wasted</h2>
+   <p class="lede">That is the story everywhere. Here is the evidence, source by source.</p>
+   <p>In the towns, <span class="n" data-l="L105" data-part="0" data-unit="kt"></span> of food and garden waste a year never reaches a composter or a digester. Only <span class="n" data-l="L069"></span> of biowaste is collected separately. On the farms, around half of olive and vine prunings are burned in the open. In the forests, what is left after cutting dries out and becomes fuel for the next fire.</p>
+   <button class="method-btn" data-method="s02a" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Three views in turn, picked from tabs reading Towns, Farms and Forests. Towns: a flow diagram of municipal biowaste in 2024 splitting into the part composted or digested and the larger part landfilled, incinerated or only mechanically treated, with methane and smoke rising. Farms: bars for the share of prunings burned in the field, olive about half, vine about half, fruit, almond and pistachio, and nuts about a quarter. Forests: a large number for the average area burned by wildfire each year, 1975 to 2025, over a strip of trees, some burned.">
+   <figure><svg class="viz" id="v-s02a"></svg>
+    <figcaption>Towns: municipal biowaste, mainland Portugal, 2024, from APA RARU 2024 shares (rows pending check). Farms: burned shares of removable dry matter from the engine library. Forests: ICNF burned area archive.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section data-not-partner class="scene" id="s02b" data-act="0" data-len="2.8" aria-labelledby="s02b-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 0 · Why</p>
+   <h2 id="s02b-h">Closing the land's loops</h2>
+   <p class="lede">Climate change asks for two things at once: cut emissions and pull carbon back out of the air. Portugal's 2024 inventory still counts <span class="n" data-l="L079"></span> before land use.</p>
+   <p>Residues can help with both. Digestion turns wet waste into biomethane and returns digestate to the fields. Pyrolysis locks carbon into biochar for soils and concrete. Composting and gasification close other loops. This is industrial ecology: an economy that works like an ecosystem, where one process feeds the next.</p>
+   <p>Each loop is judged by life cycle assessment, from the field to the end use. Our biochar study alone found <span class="n" data-l="L110"></span>, or <span class="n" data-l="L111" data-unit="%"></span> of the 2050 target it used.</p>
+   <button class="method-btn" data-method="s02b" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="A circular diagram. Fields, forests and towns produce residues that flow to four processes: anaerobic digestion, pyrolysis, composting and gasification. Their products flow on as biomethane to the gas grid, biochar to soils and cement, compost and digestate back to the fields, and power and heat to users. Carbon returns to the soil and the loop closes. Dots move around the loop.">
+   <figure><svg class="viz" id="v-s02b"></svg>
+    <figcaption>Schematic of the system RAMOS models. Each arrow is a physical flow with its own life cycle inventory.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s02" data-act="0" data-len="2.4" aria-labelledby="s02-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 0 · Why</p>
+   <h2 id="s02-h"><span data-not-partner>The same tonne, counted twice</span><span data-partner>Carbon removal potentials are double-counted</span></h2>
+   <div data-not-partner>
+   <p class="lede">Climate plans count the same biomass more than once.</p>
+   <p>Models assess each removal method on its own: biochar, bioenergy with carbon capture, biomethane. Each assumes the residues are all its own, so the potentials add up to more biomass than exists. Our two earlier studies did it too: both used the same municipal food waste.</p>
+   <p><strong style="color:var(--ink)">RAMOS gives each tonne to one pathway, chosen to remove the most carbon at the lowest cost.</strong> As far as we know, no one has yet optimised these residues across every removal pathway at once, place by place.</p>
+   </div>
+   <div data-partner>
+   <p class="lede">Carbon removal studies usually assess each pathway on its own and assume the whole residue resource is available to it. Summed across biochar, biomethane and bioenergy, these potentials exceed the biomass that exists.</p>
+   <p><strong style="color:var(--ink)">RAMOS allocates each tonne to a single pathway.</strong> The allocation maximises carbon removal at the lowest cost, location by location.</p>
+   </div>
+   <button class="method-btn" data-method="s02" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Two overlapping circles. The left circle is the biochar paper with agricultural residues and municipal organics. The right circle is the biomethane paper with municipal biowaste from 278 municipalities. The overlap, municipal food waste, glows: the same tonnes claimed by both. Then the overlap splits so each tonne goes to one side only.">
+   <figure><svg class="viz" id="v-s02"></svg>
+    <figcaption><span data-not-partner>Submitted biochar paper (under review) and the biomethane paper package. The overlap is physical: the same municipal organics, not an accounting choice.</span><span data-partner>Schematic of the double-counting problem and the single allocation in RAMOS.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section data-not-partner class="scene" id="s03" data-act="0" data-len="2.2" aria-labelledby="s03-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 0 · Why</p>
+   <h2 id="s03-h">What should become of Portugal's residues?</h2>
+   <p class="lede">RAMOS is a spatial decision model for planning sustainability projects that turn residues into carbon removal and renewable energy.</p>
+   <p>It maps where each residue arises, records what happens to it today and applies the limits set by soil and by law. Then biochar, biomethane, gasification, composting and leaving it in place compete for every tonne. Each tonne is allocated once, so no carbon is counted twice.</p>
+   <p>The aim is to manage these natural resources within what the land can give, and to plan a better future from evidence.</p>
+   <p><em>Ramos</em> is Portuguese for branches.</p>
+   <button class="method-btn" data-method="s03" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="The letters R, A, M, O and S appear one by one with their words: Residue, Allocation, Mapping, Optimisation, Sustainability. A fine branching line grows down from each letter.">
+   <figure><svg class="viz" id="v-s03"></svg></figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 1. PORTUGAL ================= -->
+<!-- ================= PARTNER: WHAT IS INSIDE ================= -->
+<section class="scene panel" id="s03h" data-act="0" data-len="3.4" aria-labelledby="s03h-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">How it works</p>
+   <h2 id="s03h-h" class="panel-h">How RAMOS works</h2>
+   <div class="fl">
+    <div class="fl-track"><div class="fl-line"><i id="fl-fill"></i></div><div class="fl-tonne" id="fl-tonne">1 t</div><button class="fl-node" data-i="0" type="button"><svg viewBox="0 0 40 40"><circle cx="20" cy="17" r="6"/><path d="M20 35 C12 25 8 21 8 16 A12 12 0 0 1 32 16 C32 21 28 25 20 35 Z"/></svg><span>Map</span></button><button class="fl-node" data-i="1" type="button"><svg viewBox="0 0 40 40"><path d="M8 32 V12 M8 32 H34 M14 26 V20 M21 26 V14 M28 26 V18"/></svg><span>Current use</span></button><button class="fl-node" data-i="2" type="button"><svg viewBox="0 0 40 40"><path d="M4 32 L16 12 L24 24 L28 18 L36 32 Z M4 32 H36"/></svg><span>Limits</span></button><button class="fl-node" data-i="3" type="button"><svg viewBox="0 0 40 40"><path d="M4 26 H24 V12 H4 Z M24 18 H31 L36 23 V26 H24 M10 30 A3 3 0 1 0 10.01 30 M30 30 A3 3 0 1 0 30.01 30"/></svg><span>Collect</span></button><button class="fl-node" data-i="4" type="button"><svg viewBox="0 0 40 40"><path d="M12 34 V14 L20 6 L28 14 V34 Z M16 34 V26 H24 V34"/></svg><span>Convert</span></button><button class="fl-node" data-i="5" type="button"><svg viewBox="0 0 40 40"><path d="M6 30 H34 M10 30 V22 H18 V30 M22 30 V16 H30 V30"/></svg><span>End use</span></button><button class="fl-node" data-i="6" type="button"><svg viewBox="0 0 40 40"><path d="M6 34 L14 22 L22 26 L34 8 M26 8 H34 V16"/></svg><span>Outcomes</span></button></div>
+    <div class="fl-dets"><div class="fl-det" data-i="0"><span class="fl-k">Step 1 of 7</span><h3>Resource mapping</h3><p>Residues are located at their source: declared farm parcels, 10 m forest cover, mills, livestock farms and waste treatment plants.</p></div><div class="fl-det" data-i="1"><span class="fl-k">Step 2 of 7</span><h3>Current use</h3><p>Each stream carries its present fate: open burning, mulching, firewood or sale. Only residue without an existing use enters the allocation.</p></div><div class="fl-det" data-i="2"><span class="fl-k">Step 3 of 7</span><h3>Sustainable removal limits</h3><p>A share of the residue stays on the field to maintain soil organic carbon, soil cover and nutrient return. On slopes above 25% all of it stays, to protect against erosion. Natura 2000 and national protected areas are excluded, and machine reach sets the technical limit. Only what remains can be collected.</p></div><div class="fl-det" data-i="3"><span class="fl-k">Step 4 of 7</span><h3>Collection logistics</h3><p>In-field chipping and vehicle routing on the national road network, costed per kilometre and per operating hour.</p></div><div class="fl-det" data-i="4"><span class="fl-k">Step 5 of 7</span><h3>Technology, siting and scale</h3><p>Pyrolysis plants, mobile units, anaerobic digesters and gasifiers compete for the same feedstock. Plant scale is optimised jointly with the catchment, balancing economies of scale against rising transport cost.</p></div><div class="fl-det" data-i="5"><span class="fl-k">Step 6 of 7</span><h3>End use</h3><p>Biochar is routed to agricultural soils and concrete, biomethane to the gas grid, and power and heat to nearby demand.</p></div><div class="fl-det" data-i="6"><span class="fl-k">Step 7 of 7</span><h3>Outcomes</h3><p>Cost, revenue, carbon removal and avoided emissions are reported as separate indicators, never aggregated into a single figure.</p></div></div>
+   </div>
+   <p class="panel-foot">A single mass balance links every stage, so no tonne is allocated twice.</p>
+  </div>
+ </div>
+</section>
+
+<section class="scene panel" id="s03w" data-act="0" data-len="3.4" aria-labelledby="s03w-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">The scope</p>
+   <h2 id="s03w-h" class="panel-h">Model scope</h2>
+   <div class="sx">
+    <nav class="sx-nav" aria-label="Model layers"><button class="sx-tab" data-i="0" type="button"><span class="sx-num">01</span>Feedstocks</button><button class="sx-tab" data-i="1" type="button"><span class="sx-num">02</span>Technology</button><button class="sx-tab" data-i="2" type="button"><span class="sx-num">03</span>Carbon</button><button class="sx-tab" data-i="3" type="button"><span class="sx-num">04</span>Economics</button><button class="sx-tab" data-i="4" type="button"><span class="sx-num">05</span>Land and limits</button><div class="sx-bar"><i id="sx-fill"></i></div></nav>
+    <div class="sx-stage"><div class="sx-pane" data-i="0"><div class="sx-head"><svg viewBox="0 0 40 40" class="sx-ico"><path d="M6 30 C6 14 18 6 34 6 C34 22 26 34 10 34 Z M8 32 L24 16"/></svg><div><h3>Feedstocks</h3><p>21 residue streams, each with its own moisture, carbon, ash and current fate.</p></div></div><ul class="sx-pills"><li style="--d:0ms">Forest slash, pine</li><li style="--d:45ms">Forest slash, eucalyptus</li><li style="--d:90ms">Shrubland brush</li><li style="--d:135ms">Olive prunings</li><li style="--d:180ms">Vine prunings</li><li style="--d:225ms">Fruit and nut prunings</li><li style="--d:270ms">Montado prunings</li><li style="--d:315ms">Wheat, barley, oat, rye, triticale straw</li><li style="--d:360ms">Maize straw</li><li style="--d:405ms">Rice residue</li><li style="--d:450ms">Olive pomace</li><li style="--d:495ms">Grape marc</li><li style="--d:540ms">Cattle manure</li><li style="--d:585ms">Pig manure</li><li style="--d:630ms">Municipal food waste</li><li style="--d:675ms">Digestate</li></ul></div><div class="sx-pane" data-i="1"><div class="sx-head"><svg viewBox="0 0 40 40" class="sx-ico"><path d="M20 4 C26 14 32 18 32 26 A12 12 0 0 1 8 26 C8 20 12 16 14 12 C16 18 18 20 20 20 C20 14 18 10 20 4 Z"/></svg><div><h3>Technology</h3><p>Conversion pathways compete for the same feedstock.</p></div></div><ul class="sx-pills"><li style="--d:0ms">Continuous pyrolysis <em>live</em></li><li style="--d:45ms">Mobile biochar units <em>live</em></li><li style="--d:90ms">Anaerobic digestion, 4 configurations <em class="wk">integrating this week</em></li><li style="--d:135ms">Biomethane size ladder, farm to grid scale <em class="wk">integrating this week</em></li><li style="--d:180ms">Gasification <em class="dc">designed and costed</em></li><li style="--d:225ms">Composting</li><li style="--d:270ms">In-situ retention</li></ul></div><div class="sx-pane" data-i="2"><div class="sx-head"><svg viewBox="0 0 40 40" class="sx-ico"><circle cx="12" cy="20" r="8"/><circle cx="28" cy="20" r="8"/></svg><div><h3>Carbon</h3><p>Every tonne is accounted against its own counterfactual.</p></div></div><ul class="sx-pills"><li style="--d:0ms">Avoided open burning, +198 kg CO2e/t DM</li><li style="--d:45ms">Soil carbon forgone, −190 kg CO2e/t DM</li><li style="--d:90ms">Three permanence methods</li><li style="--d:135ms">EU CRCF certification rules</li><li style="--d:180ms">Removals and avoided emissions reported separately</li></ul></div><div class="sx-pane" data-i="3"><div class="sx-head"><svg viewBox="0 0 40 40" class="sx-ico"><path d="M30 10 A12 12 0 1 0 30 30 M6 17 H22 M6 23 H22"/></svg><div><h3>Economics</h3><p>Pathways, plant sites and catchments chosen in one national solve.</p></div></div><ul class="sx-pills"><li style="--d:0ms">Mixed-integer optimisation</li><li style="--d:45ms">Joint siting and catchment</li><li style="--d:90ms">Collection costed on the road network</li><li style="--d:135ms">CAPEX and OPEX by plant capacity</li><li style="--d:180ms">Official 2025 wood chip prices</li><li style="--d:225ms">Revenue: biochar</li><li style="--d:270ms">Revenue: carbon removal credits</li><li style="--d:315ms">Revenue: biomethane</li><li style="--d:360ms">Revenue: power and heat</li><li style="--d:405ms">Base value and range for every price</li></ul></div><div class="sx-pane" data-i="4"><div class="sx-head"><svg viewBox="0 0 40 40" class="sx-ico"><path d="M2 34 L14 12 L22 24 L28 16 L38 34 Z"/></svg><div><h3>Land and limits</h3><p>Only residue that can leave sustainably enters the allocation.</p></div></div><ul class="sx-pills"><li style="--d:0ms">Soil organic carbon retention</li><li style="--d:45ms">Slopes above 25%</li><li style="--d:90ms">Natura 2000 and RNAP</li><li style="--d:135ms">Machine accessibility</li><li style="--d:180ms">Firewood already committed</li><li style="--d:225ms">Stakeholder-selected criteria</li><li style="--d:270ms">Biodiversity indicator</li></ul></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="scene panel" id="s03d" data-act="0" data-len="3" aria-labelledby="s03d-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">What makes it different</p>
+   <h2 id="s03d-h" class="dx-h">What sets RAMOS apart.</h2>
+   <div class="dx">
+    <div class="dx-card" data-k="0"><svg class="dx-v" viewBox="0 0 160 120" aria-hidden="true">
+      <circle class="dx-src" cx="26" cy="60" r="18"/><text x="26" y="64" class="dx-t">1 t</text>
+      <path class="dx-p p0" d="M44 60 C80 60 90 24 124 24"/><path class="dx-p p1 win" d="M44 60 L124 60"/><path class="dx-p p2" d="M44 60 C80 60 90 96 124 96"/>
+      <circle class="dx-end e0" cx="132" cy="24" r="8"/><circle class="dx-end e1 win" cx="132" cy="60" r="8"/><circle class="dx-end e2" cx="132" cy="96" r="8"/>
+      <text x="132" y="12" class="dx-s">gas</text><text x="132" y="78" class="dx-s">char</text><text x="132" y="116" class="dx-s">soil</text></svg>
+     <div><span class="lnum">01</span><h3>Single allocation of a finite resource</h3><p>To our knowledge, the first national model in which all carbon removal pathways compete for the same finite residue, location by location, without double counting.</p></div></div>
+    <div class="dx-card" data-k="1"><svg class="dx-v" viewBox="0 0 160 120" aria-hidden="true">
+      <line x1="8" y1="70" x2="152" y2="70" class="dx-ax"/>
+      <rect class="dx-b b0" x="18" y="70" width="30" height="18"/><rect class="dx-b b1" x="65" y="53" width="30" height="17"/><rect class="dx-b b2" x="112" y="18" width="30" height="52"/><rect class="dx-band" x="110" y="4" width="34" height="28"/>
+      <text x="33" y="102" class="dx-s">burn</text><text x="80" y="88" class="dx-s">chip</text><text x="127" y="88" class="dx-s">char</text></svg>
+     <div><span class="lnum">02</span><h3>Chipping beats burning. Biochar beats both.</h3><p>Burn a tonne of prunings and you release about 198 kg CO2e of methane and nitrous oxide on top of the carbon. Chip it and leave it, and most of it rots away. The soil keeps about 190 kg CO2e. Turn it into biochar and you lock away 422 to 735 kg CO2e, depending on which rules you count by, for the cost of 30 to 60 kg in collection and processing.</p></div></div>
+    <div class="dx-card" data-k="2"><svg class="dx-v" viewBox="0 0 160 120" aria-hidden="true">
+      <line x1="10" y1="108" x2="152" y2="108" class="dx-ax"/><line x1="10" y1="108" x2="10" y2="8" class="dx-ax"/>
+      <path class="dx-fan" d="M12 70 L150 22 L150 102 Z"/><path class="dx-fan f2" d="M12 70 L150 40 L150 82 Z"/><path class="dx-mid" d="M12 70 L150 62"/>
+      <circle class="dx-dot" cx="150" cy="62" r="3.5"/></svg>
+     <div><span class="lnum">03</span><h3>Uncertainty reported as a result</h3><p>Biochar value, carbon price, gas price and feedstock price each carry a base value and a range. Results are reported across those ranges, which is the basis for investment decisions.</p></div></div>
+    <div class="dx-card" data-k="3"><div class="dx-v dx-tests"><div class="dx-grid"></div><div class="dx-cnt"><b id="dx-n">0</b> tests pass</div></div>
+     <div><span class="lnum">04</span><h3>Full traceability</h3><p>Every parameter is graded and traced to its source, every run is reproducible, and nearly 3,000 automated tests verify results whenever the model changes.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s04" data-stage="map" data-act="1" data-len="2.4" aria-labelledby="s04-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 1 · Portugal</p>
+   <h2 id="s04-h">Every residue, on a real map</h2>
+   <p class="lede">RAMOS works on a real map. Declared farm parcels, forest cover at 10 metres, waste plants, mills and farms as points.</p>
+   <p>Each residue is placed where it actually arises: <span class="n" data-l="L001"></span> and <span data-not-partner><span class="n" data-l="L002"></span></span><span data-partner><span class="n" data-l="L121"></span></span> in the library.</p>
+   <button class="method-btn" data-method="s04" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Layers stack onto the map of Portugal one at a time: 278 municipal boundaries, a mosaic of fields standing in for the parcel layer, small in the north and large in the south and tinted by each area's residues, burned areas since 1975, the gas grid, then points for biowaste plants, industrial emitters, cement kilns, ports and airports. Each layer has a badge naming its source.">
+   <figure><svg class="viz" id="v-s04"></svg>
+    <figcaption>The field mosaic is schematic: field size follows the north to south pattern and colours follow each municipality's residue mix (F1 classes). <span data-not-partner>Real parcel geometry is personal data and is never drawn.</span><span data-partner> Real parcel tiles are being prepared for the map.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s05" data-stage="map" data-act="1" data-len="3.2" aria-labelledby="s05-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 1 · Portugal</p>
+   <h2 id="s05-h">The feedstocks</h2>
+   <p class="lede">Each residue is its own stream with its own colour.</p>
+   <p>Forest residues in the centre and north. Olive prunings in the Alentejo and the interior. Vines in the Douro, the Dão and Bairrada. Cereal straw on the southern plains. Then fruit and nut orchards, food waste in the towns and manure on the farms.</p>
+   <p>RAMOS never melts them into one anonymous tonnage.</p>
+   <button class="method-btn" data-method="s05" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Seven map sheets of Portugal drop one at a time onto a tilted layer stack, one per residue stream: forest residues, olive prunings, vine prunings, cereal straw, fruit and nut prunings, municipal food waste and manure. Each sheet is a continuous mosaic of fields shaded in that stream's colour, darker where more of it arises.">
+   <figure><svg class="viz" id="v-s05"></svg>
+    <figcaption id="s05-cap">Fields are schematic. Their shade is the presence class of the municipality they sit in (F1, quartiles of municipalities with any of that residue). No tonnes, by design. Combined residue table of 14 Oct, provisional.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s06" data-stage="map" data-act="1" data-len="3.2" aria-labelledby="s06-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 1 · Portugal</p>
+   <h2 id="s06-h">Fire as a shared layer</h2>
+   <p class="lede">Fire sits under everything. Every burned area from <span class="n" data-l="L006" data-unit=""></span>, every request to burn residue since 2020.</p>
+   <p>Fire shapes what grows back, what is left and what is worth clearing. In October 2017 the fire crossed Mortágua. This is where we land.</p>
+   <button class="method-btn" data-method="s06" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="A year counter runs from 1975 to 2025 over the map of Portugal. Each year's burned areas flash red and fade to scar tones, building a cumulative scar map. The counter pauses at 2017, then the view descends on Mortágua and the seven municipalities of the landing cluster.">
+   <figure><svg class="viz" id="v-s06"></svg>
+    <figcaption>ICNF burned areas, generalised to 600 m for animation. Mean area burned a year <span class="n" data-l="L007"></span>. About <span class="n" data-l="L102" data-part="0" data-unit="% of the landing cluster"></span> lies inside the 2017 perimeters. Landing cluster: Mortágua, Tondela, Santa Comba Dão, Carregal do Sal, Tábua, Penacova, Anadia.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 2. THE PARCEL ================= -->
+<section class="scene" id="s07" data-stage="arising" data-act="2" data-len="2.4" aria-labelledby="s07-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 2 · The parcel</p>
+   <h2 id="s07-h">From crop to residue</h2>
+   <p class="lede"><span data-not-partner>Prunings grow with the tree, not with the fruit.</span><span data-partner>Every crop has its own residue factor, drawn from the literature, mapped by season, with the field conditions that affect it.</span></p>
+   <p data-not-partner>So RAMOS reads each declared grove, sorts it by how densely it is planted, and gives each class its own pruning rate per hectare. A traditional grove like this one gives <span class="n" data-l="L097"></span> of dry wood.</p>
+   <p data-partner>RAMOS reads each declared grove, classifies it by planting density and assigns each class its own pruning rate per hectare. A traditional grove gives between 1.1 and 2.6 tonnes of dry wood per hectare a year, depending on the region.</p>
+   <button class="method-btn" data-method="s07" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D1" data-alt="A traditional olive grove on a winter hillside, widely spaced trees. Pruned branches drop and gather into a pile while a counter climbs to 1.32 tonnes of dry matter per hectare a year. A small panel shows a vineyard doing the same in vine colour.">
+   <figure><svg class="viz" id="v-s07"></svg>
+    <figcaption><span data-not-partner>Worked example from library values, traditional grove, Centro.</span><span data-partner>Traditional olive groves, regional range from the library.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s08" data-stage="today" data-act="2" data-len="2.6" aria-labelledby="s08-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 2 · The parcel</p>
+   <h2 id="s08-h">What happens today</h2>
+   <p class="lede">Before anything competes, RAMOS records what already happens.</p>
+   <p>For olive prunings, a share of <span class="n" data-l="L015"></span> is burned in the field and <span class="n" data-l="L016"></span> is chipped and left on the ground. Firewood takes <span class="n" data-l="L018"></span>. A little is sold.</p>
+   <p>The burned, chipped and undeclared tonnes are contestable. Firewood and sold wood are already committed, and offering them again would sell the same wood twice.</p>
+   <button class="method-btn" data-method="s08" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D2" data-alt="One tonne of olive prunings, drawn as 100 branches, leaves a single pile and settles into five destinations: burned, chipped and left, undeclared, firewood and sold. A bracket groups the first three as contestable and the last two as committed. Rows of branches show the burned share for vine, fruit and nut prunings.">
+   <figure><svg class="viz" id="v-s08"></svg>
+    <figcaption>Shares of removable dry matter, olive prunings today. Fate table of 28 Oct.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s09" data-stage="today" data-act="2" data-len="2.6" aria-labelledby="s09-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 2 · The parcel</p>
+   <h2 id="s09-h"><span data-not-partner>Same tonne, opposite sign</span><span data-partner>One tonne of olive prunings, three fates</span></h2>
+   <div data-not-partner>
+   <p class="lede">Take a tonne that would have been burned, and you stop the methane and nitrous oxide from the fire: <span class="n" data-l="L022"></span> saved.</p>
+   <p>Take a tonne that would have been chipped and left, and you take carbon the soil would have kept: <span class="n" data-l="L025" data-part="0"></span> net over 100 years. Same lorry, same material, opposite sign. RAMOS never averages the two.</p>
+   </div>
+   <div data-partner><p class="lede">Chipping beats burning. Biochar beats both.</p>
+   <p>Burn a tonne of prunings and you release about 198 kg CO2e of methane and nitrous oxide on top of the carbon. Chip it and leave it, and most of it rots away. The soil keeps about 190 kg CO2e. Turn it into biochar and you lock away 422 to 735 kg CO2e, depending on which rules you count by, for the cost of 30 to 60 kg in collection and processing.</p></div>
+   <button class="method-btn" data-method="s09" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D3" data-alt="Two tiles. Left, a tonne that was going to be burned in the field: a burning pile under methane and nitrous oxide molecules. Right, a tonne that was going to be chipped and left: chips on soil feeding soil carbon. A button reads RAMOS collects the tonne. The fire goes out and the gases fade on the left, the chips lift away and the soil carbon fades on the right. Results appear: plus 198 kg CO2e per tonne of dry matter on the left, minus 190 on the right. A closing line: same truck, same wood, opposite sign, and averaging them would read about plus 4 and hide both.">
+   <figure><svg class="viz" id="v-s09"></svg>
+    <figcaption><span data-not-partner>Per tonne of dry matter. Biogenic CO2 from burning is not charged.</span><span data-partner>Even under the strictest EU rules, biochar keeps more than twice the carbon that chipping leaves in the soil. RAMOS tracks each part separately and never adds removals and avoided emissions into one number.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s10" data-stage="limits" data-act="2" data-len="3.2" aria-labelledby="s10-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 2 · The parcel</p>
+   <h2 id="s10-h">How much may be taken</h2>
+   <p class="lede">Soil needs some of the residue. Steep ground needs cover. Machines cannot reach everything, and some land is protected by law.</p>
+   <p>RAMOS treats each limit separately and gives the removable share as a range. Different land managers care about different things, so the user chooses whose concerns count.</p>
+   <button class="method-btn" data-method="s10" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="One hectare of olive prunings drawn as a bar with a big number above it. Step 1: the soil keeps its share and that slice drops away in brown. Step 2: machines cannot reach a quarter of what is left and that slice turns grey. The number settles on what can leave the field. Step 3 notes that steep ground keeps everything and protected areas allow no collection. Then the landing cluster appears in relief, with ground steeper than 25 percent shaded and protected areas hatched, each lighting up in a legend.">
+   <figure><svg class="viz" id="v-s10"></svg>
+    <figcaption id="s10-cap"><span data-not-partner>One hectare worked example from library values: arising times the soil share times technical recovery. Steep shading: ground above 25 percent slope from a surface model, so canopy inflates slope in forest. Hatched: Natura 2000 and national protected areas.</span><span data-partner>One-hectare worked example from library values: residue arising, multiplied by the share the soil may release and by technical recovery.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 3. COLLECTION ================= -->
+<section class="scene" id="s12" data-stage="collection" data-act="3" data-len="3.2" aria-labelledby="s12-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 3 · Collection</p>
+   <h2 id="s12-h">Chipped at the roadside, then hauled</h2>
+   <p class="lede">Farmers stack their prunings at the edge of the farm track. A crew arrives with a chip truck and a towed chipper, the set-up arborists use.</p>
+   <p>The chipper is hitched behind the truck. Two people feed the branches in by hand, and a straight chute blows the chips through the open rear door of the chip box. Chips pack far tighter than loose branches: <span class="n" data-l="L039"></span>. When the box is full, the truck takes the farm track to the road and on to the plant.</p>
+   <button class="method-btn" data-method="s12" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D5" data-alt="Olive prunings piled beside a farm track between olive trees. A cab-over truck with an enclosed chip box tows a drum chipper. One crew member in hi-vis carries branches from the pile, the other feeds the chipper. Chips arc from the chipper's swan-neck chute into the open rear of the box, where a heap rises, seen through a cutaway side. Then the rig drives down the track towards a tarmac road with the camera following.">
+   <figure><svg class="viz" id="v-s12"></svg>
+    <figcaption>Generic equipment, no brands. Hand loading of loose branches is also modelled, see the method tab.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s13" data-stage="collection" data-act="3" data-len="3.4" aria-labelledby="s13-h" data-eqtex="20 21 22 23 26">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 3 · Collection</p>
+   <h2 id="s13-h">Farm to farm to plant</h2>
+   <p class="lede">One truck, one morning. It stops at a pile, chips it, moves to the next farm along the dirt track, then the next.</p>
+   <p>When the body is full it heads to the plant on real roads. Watch every farm that feeds this plant light up in turn. RAMOS routes each run on the actual road network, prices it and counts its emissions.</p>
+   <button class="method-btn" data-method="s13" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Relief map of the Mortágua area with farm tracks and roads. A truck route runs from pile to pile along dirt tracks, then on tarmac to a plant near Mortágua. Then threads from hundreds of farm track ends light up and converge on the plant, finer at the tips and thicker where flows merge.">
+   <figure><svg class="viz" id="v-s13"></svg>
+    <figcaption>Illustrative route and catchment drawn on the engine's road graph (OpenStreetMap contributors, ODbL), being coded. Farm tips are track ends, not real piles. Plant node placed by hand near Mortágua.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 4. THE PLANT ON THE MAP ================= -->
+<section class="scene" id="s14" data-stage="plants" data-act="4" data-len="2.8" aria-labelledby="s14-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 4 · The plant on the map</p>
+   <h2 id="s14-h">A plant sized to its catchment</h2>
+   <p class="lede">Zoom out and the threads form a catchment.</p>
+   <p>RAMOS groups parcels into clusters and sizes each plant to what its own cluster can supply. Bigger is not automatically better: past a point, every extra tonne travels further than the savings are worth. Depots appear where a longer haul pays.</p>
+   <button class="method-btn" data-method="s14" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="The landing cluster with three illustrative plant nodes near Mortágua, Tondela and Anadia. Branching threads on real roads grow outward from each plant to the farm tracks it gathers from, thick near the plant and fine at the tips, like a mycelium. One dashed depot sits at a junction.">
+   <figure><svg class="viz" id="v-s14"></svg>
+    <figcaption>Illustrative catchments drawn on real roads, each farm tip assigned to its nearest plant by travel time. Not a siting result. Depot drawn dashed: designed, being coded.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 5. INSIDE THE PLANTS ================= -->
+<section class="scene" id="s15" data-stage="plants" data-act="5" data-len="2.8" aria-labelledby="s15-h" data-eqtex="29 30 32">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 5 · Inside the plants</p>
+   <h2 id="s15-h">The biochar plant</h2>
+   <p class="lede">One wet tonne of olive prunings comes in. First the water is taken out of the arithmetic, because yields are measured on dry wood.</p>
+   <p>Heated without oxygen, a share of <span class="n" data-l="L060"></span> of the dry wood becomes biochar, and most of that is carbon. The plant reports how much carbon is physically in the char. How much of it counts is decided later, by a named method.</p>
+   <button class="method-btn" data-method="s15" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D6" data-alt="Cutaway of a generic continuous pyrolysis plant: reception with chip piles, a dryer, a glowing reactor with its gas loop heating the process, and char leaving on a conveyor. A waterfall beside it steps down from one wet tonne to the carbon dioxide equivalent held in the char.">
+   <figure><svg class="viz" id="v-s15"></svg>
+    <figcaption>Worked example, one wet tonne of olive prunings, library values. Generic plant, no vendor shapes.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s16" data-stage="plants" data-act="5" data-len="2.4" aria-labelledby="s16-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 5 · Inside the plants</p>
+   <h2 id="s16-h">The biomethane plant</h2>
+   <p class="lede">Food waste and manure are too wet to burn or char. In a digester, microbes turn them into biogas.</p>
+   <p>Cleaned to grid quality, it becomes biomethane and flows into the gas network. What is left, the digestate, goes back to the fields. The engine also lets digestate feed a pyrolysis plant, so one pathway's output becomes another's input.</p>
+   <button class="method-btn" data-method="s16" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D7" data-alt="A generic digestion site: a reception bunker with food waste and manure in their colours, two domed digesters, an upgrading unit, a grid injection point with a pipe going underground, and a digestate tanker leaving for the fields. A dotted line marks the optional digestate to pyrolysis cascade.">
+   <figure><svg class="viz" id="v-s16"></svg>
+    <figcaption>Generic site, no vendor shapes.<span data-not-partner> Manure at farm level is work in progress.</span><span data-partner> Manure is in at parish level, six species.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s17" data-stage="plants" data-act="5" data-len="2.4" aria-labelledby="s17-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 5 · Inside the plants</p>
+   <h2 id="s17-h">The gasifier</h2>
+   <p class="lede">Dry woody residue can also be gasified: heated with little oxygen into a fuel gas.</p>
+   <p>That gas runs an engine for power and heat, or is upgraded to synthetic methane or liquid fuels. Each configuration takes different feedstocks. Olive wood, for example, carries too much ash for a small gasifier.</p>
+   <button class="method-btn" data-method="s17" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D8" data-alt="A generic small gasification plant in a steel hall: an outdoor chip store and belt dryer, a conveyor to a day hopper with a red ash check gate, two downdraft gasifier reactors, gas cooling, a cyclone and a bag filter, and two engine gensets in acoustic enclosures with stacks through the roof. Outside stand a heat store with district heat pipes, a grid connection and a flare. A translucent fuel synthesis tower carries a work in progress tag. At the gate olive chips bounce off to a reject skip.">
+   <figure><svg class="viz" id="v-s17"></svg>
+    <figcaption><span data-not-partner>Designed and costed in the library, not yet a pathway in the engine. </span><span data-partner>A pathway in the engine, feedstock cost included. </span>Generic equipment.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 6. COMPETITION AND END USE ================= -->
+<section class="scene" id="s18" data-stage="competition" data-act="6" data-len="3.2" aria-labelledby="s18-h" data-eqtex="35 36 37 38">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 6 · Competition and end use</p>
+   <h2 id="s18-h"><span data-not-partner>The auction</span><span data-partner>Carbon price and biochar viability</span></h2>
+   <div data-not-partner>
+   <p class="lede">Think of each tonne as up for sale. Every pathway makes an offer: the most it could pay for that tonne and still break even. The best offer above zero takes it. If nobody can pay, the tonne stays on the farm.</p>
+   <div><p>A carbon price changes the offers. Biochar locks carbon away, so its offer climbs as the price rises. In one olive zone it starts winning <!--collab--><span data-collab>somewhere between <span class="n" data-l="L074"></span></span><!--/collab--><span data-public>at some carbon price</span>. That crossing price is the answer RAMOS gives, per feedstock and per place.</p></div>
+   </div>
+   <div data-partner>
+   <p class="lede">Across today's carbon removal prices (108 to 130 EUR/t), the payable share of the olive biochar pool barely moves. Just above the top of that range it climbs steeply.</p>
+   <p>RAMOS shows exactly where that cliff sits, per feedstock and per place.</p>
+   </div>
+   <button class="method-btn" data-method="s18" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="A headline answers who gets one tonne of olive prunings. Left, a podium of offers around a break-even line: biochar, biomethane and leave it on the farm, with the tonne and a WINS badge on the best offer. Right, a chart of offer against carbon price from 0 to 300 euros: biochar rises and crosses zero between 150 and 200, biomethane stays flat below zero, and the area where biochar wins is shaded. As you scroll the price marker moves and the tonne moves from leave it to biochar. Gasification and compost show NO INFO.">
+   <figure><svg class="viz" id="v-s18"></svg>
+    <figcaption><span data-not-partner><!--collab--><span data-collab>Illustrative, engine run 6da1854, one Alentejo olive zone, values still moving. </span><!--/collab--><span data-public>Illustrative zone, bars without values. </span>Avoided emissions are not monetised in bids yet, which tilts the auction towards biochar as the carbon price rises.</span><span data-partner>Schematic of the shape only. Olive zones. Updated shares follow the engine correction of 24 Nov.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s19" data-stage="enduse" data-act="6" data-len="2.8" aria-labelledby="s19-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 6 · Competition and end use <span class="chip wip">work in progress</span></p>
+   <h2 id="s19-h"><span data-not-partner>Where the products go</span><span data-partner>End uses: soils and concrete</span></h2>
+   <div data-not-partner>
+   <p class="lede">Read the map in four steps. Residue goes to a plant. Biochar goes to farm soils and <span data-not-partner>cement kilns</span><span data-partner>concrete</span>. Biomethane joins the gas grid. Then the emitters that need removals appear.</p>
+   <p>On the other side are the emitters: industrial sites, airports and ports that need removals. RAMOS can show how much of Portugal's remaining emissions these residues could cover. It never promises neutrality.</p>
+   </div>
+   <div data-partner>
+   <p class="lede">Biochar returns to agricultural soils, where it improves water and nutrient retention, particularly when co-applied with digestate or manure. It is also used in concrete.</p>
+   <p>Portugal produces about 7.5 million cubic metres of ready-mix concrete a year. Replacing less than 4% of the sand with biochar would absorb the entire national supply <span class="chip prov">provisional</span>. Biomethane is injected into the gas grid.</p>
+   </div>
+   <button class="method-btn" data-method="s19" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="The national map. Gas pipelines pulse in blue, cement kilns and municipal biowaste plants are marked, and illustrative flows run from every municipality to plant hubs, then on as char to kilns and soils and as gas into the grid. Industrial emitters appear as grey circles sized by verified emissions, with airports and ports as squares. A gap bar shows the national inventory with no fill, because the share covered is not yet an output.">
+   <figure><svg class="viz" id="v-s19"></svg>
+    <figcaption><span data-not-partner>Emitters: mainland ETS and E-PRTR facilities with their latest verified emissions, islands removed. Gas grid: OpenInfraMap (OpenStreetMap, ODbL). Cement kiln positions approximate. Flows are illustrative: each municipality sends residue to its nearest biowaste plant hub, char goes to the nearest active kiln and back to farm soils, gas to the nearest pipeline. Not an engine result.</span><span data-partner>Emitters: mainland ETS and E-PRTR facilities with their latest verified emissions, islands removed. Gas grid: OpenInfraMap (OpenStreetMap, ODbL). Flows: each municipality sends residue to its nearest biowaste plant hub, char goes back to farm soils and into concrete, gas to the nearest pipeline.</span></figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s20" data-stage="impacts" data-act="6" data-len="2.8" aria-labelledby="s20-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 6 · Competition and end use</p>
+   <h2 id="s20-h">Back into the soil</h2>
+   <p class="lede">Biochar is spread on the field. Rain, roots and worms carry it down into the soil, where it breaks down very slowly. How much still counts depends on whom you ask.</p>
+   <p>A physical estimate, the EU credit rules and the submitted paper give different answers for the same char. RAMOS keeps them side by side and names the method on every result. Carbon removed and emissions avoided are never added into one number.</p>
+   <button class="method-btn" data-method="s20" type="button">Method</button>
+  </div>
+  <div class="stage" data-render="3D9" data-alt="A soil block cut from a field. Black biochar granules fall onto the grass and settle as a dark film, then move down the cut face through the topsoil into the subsoil while roots, worms and fungal threads grow around them. A few granules fade as the decades pass. A time marker runs from 0 to 200 years while curves of carbon remaining fall at different rates, labelled physical, EU credit and paper. Two counters sit apart, removed and avoided, never summed.">
+   <figure><svg class="viz" id="v-s20"></svg>
+    <figcaption>Curve shapes are schematic. End points come from the ledger. Per wet tonne of olive prunings, worked example.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene" id="s21" data-stage="impacts" data-act="6" data-len="2.4" aria-labelledby="s21-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 6 · Competition and end use <span class="chip wip">work in progress</span></p>
+   <h2 id="s21-h">Biodiversity response</h2>
+   <p class="lede">Taking residue changes life on the land. On one plot, the left half is cleared of every branch. The right half keeps a share on the floor, and life comes back: fungi on the chips, beetles in deadwood, birds in the trees.</p>
+   <p>RAMOS adds biodiversity as its own lens beside carbon and cost. Some places are off limits. The indicator is still being built with colleagues, and the site says so.</p>
+   <button class="method-btn" data-method="s21" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="A 3D plot of olive grove split in two. The left half is bare soil with sparse grass. On the right half a thick sward, chipped mulch, a deadwood log with beetles and a lizard, fungi and a bird appear in turn. Beside it three dials for carbon, cost and biodiversity, the biodiversity dial dashed and marked work in progress. An inset map of the cluster hatches the protected areas where no collection is allowed.">
+   <figure><svg class="viz" id="v-s21"></svg>
+    <figcaption>Protected areas: Natura 2000 (EEA) and RNAP (ICNF) within 5 km of the cluster. No collection inside them.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<!-- ================= ACT 7. WHAT IT IS FOR ================= -->
+<section data-not-partner class="scene" id="s22" data-stage="uses" data-act="7" data-len="2.8" aria-labelledby="s22-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker">Act 7 · What it is for</p>
+   <h2 id="s22-h">What RAMOS can be used for</h2>
+   <p class="lede">RAMOS is built to be asked questions.</p>
+   <p>A municipality can ask where a plant should go and what it would gather. A researcher can ask what each pathway needs to win. A planner can ask how much of the national gap residues could cover, at what cost and with what effect on biodiversity.</p>
+   <p>Every number carries its source, every run can be reproduced exactly, and an independent audit checks the work.</p>
+   <button class="method-btn" data-method="s22" type="button">Method</button>
+  </div>
+  <div class="stage" data-alt="Three question cards slide in: a municipality, a researcher and a planner. Below them the engine is drawn as its nodes grouped by build status, most solid, a few dashed. A row of trust badges reads Sourced, Graded, Reproducible, Checked and Audited.">
+   <figure><svg class="viz" id="v-s22"></svg>
+    <figcaption>Engine nodes drawn by status from the engine map counts. The stage by stage diagram will be redrawn from the engine map file.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+<section class="scene panel" id="s22b" data-stage="uses" data-act="7" data-len="2" aria-labelledby="s22b-h" data-partner>
+ <div class="pin">
+  <div class="panel-in">
+   <p class="kicker">Who it is for</p>
+   <h2 id="s22b-h" class="panel-h">A decision tool for every actor in the residue chain</h2>
+   <div class="bcards"><div class="bcard"><span class="lnum">01</span><h3>Cooperatives</h3><p class="bq">Where should our plant stand, and how big?</p><p>Plant siting and sizing against the members' own catchment, with costs, revenues and carbon per tonne.</p></div><div class="bcard"><span class="lnum">02</span><h3>Farmers and landowners</h3><p class="bq">What is my residue worth?</p><p>A price and a destination for prunings, straw and cleared biomass that today cost money to dispose of.</p></div><div class="bcard"><span class="lnum">03</span><h3>Municipalities and decision makers</h3><p class="bq">Which projects fit our territory?</p><p>A mapped plan per municipality: feedstock, limits, plant options and the share of local emissions they could address.</p></div><div class="bcard"><span class="lnum">04</span><h3>Investors and developers</h3><p class="bq">Where are the bankable projects?</p><p>Ranked sites with CAPEX, OPEX, revenue and carbon removal shown as ranges, the basis for due diligence.</p></div><div class="bcard"><span class="lnum">05</span><h3>Consulting</h3><p class="bq">A tool, not a one-off study.</p><p>RAMOS powers feasibility studies, business cases and carbon credit project design, re-run whenever prices or data change.</p></div></div>
+   <p class="panel-foot panel-foot-strong">RAMOS is also a consulting engine: each question above becomes a study, delivered from the same model.</p>
+  </div>
+ </div>
+</section>
+
+
+<section class="scene night" id="s23" data-stage="all" data-act="7" data-len="3.2" aria-labelledby="s23-h">
+ <div class="pin">
+  <div class="story">
+   <p class="kicker"><span data-not-partner>Act 7 · What it is for</span><span data-partner>RAMOS</span></p>
+   <h2 id="s23-h"><span data-not-partner>The mycelium</span><span data-partner>Modelling and planning, inspired by nature.</span></h2>
+<div data-not-partner>
+   <p class="lede">Step back and look at what we have drawn. Thousands of farms, each a tip.</p>
+   <p>Threads gather what the land lets go and carry it to where it is needed, then return carbon and nutrients to the soil. It is a mycelium.</p>
+   <p class="lede">The objective of RAMOS is to model human systems on nature, in a way that helps us and our planet.</p>
+   </div>
+   <div data-partner>
+   <p class="lede">Thousands of farms, each a tip. Threads gather what the land lets go, carry it to where it is needed and return carbon and nutrients to the soil.</p>
+   <p>RAMOS plans residue systems the way a mycelium runs a forest floor: every tonne connected, nothing counted twice, nothing taken that the soil needs.</p>
+   <p class="s23-sig">Aido Zickmantel · IN+, Instituto Superior Técnico, Universidade de Lisboa</p>
+   </div>
+  </div>
+  <div class="stage" data-render="3D10" data-alt="The mapped network over Portugal, municipalities linked to waste plants and plants linked to each other, morphs from straight neutral lines into soft branching hyphae carrying feedstock colours. Briefly the view drops below ground where the same pattern continues as fungal threads around roots, then rises back. The RAMOS letters return, each ending in a branch.">
+   <figure><svg class="viz" id="v-s23"></svg>
+    <figcaption>Artistic rendering of the network, not a result.</figcaption>
+   </figure>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer class="credits" id="credits">
+ <h2>RAMOS</h2>
+ <p>Residue, Allocation, Mapping, Optimisation, Sustainability. A spatial decision engine for mainland Portugal, in the thesis <em>The Land's Metabolism</em>. Working name.</p>
+ <p>Aido (Aidan Donevan) Zickmantel, PhD in Sustainable Energy Systems, IN+ Center for Innovation, Technology and Policy Research, Instituto Superior Técnico, Universidade de Lisboa. Supervisor: Joana Portugal-Pereira.</p>
+ <p>Data: ICNF, IFAP, DGT, INE, APA, DGEG, EEA, Copernicus, OpenStreetMap contributors (ODbL). Boundaries from CAOP 2025.</p>
+ <p>Status labels: numbers without a label are confirmed. <span class="chip prov">provisional</span> may move. <span class="chip wip">work in progress</span> is designed or being coded. <span class="chip illus">illustrative</span> is a worked example, not a result. <span class="noinfo">NO INFO</span> means no reliable value exists.</p>
+ <p data-collab>Committee version, shared privately. Collaborator-only elements are shown with their flags. Not for public distribution.</p>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="method" id="method" role="dialog" aria-modal="true" aria-labelledby="method-h" tabindex="-1">
+ <header><h2 id="method-h">Method</h2><button class="close" id="method-close" type="button" aria-label="Close method panel">Close</button></header>
+ <div class="body" id="method-body"></div>
+</aside>
+
+<script src="data/ledger.js"></script>
+<script src="data/equations.js"></script>
+<script src="js/method-content.js"></script>
+<script src="js/core.js"></script>
+<script src="js/scenes-1.js"></script>
+<script src="js/scenes-2.js"></script>
+<script src="js/partner.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-models.js"></script>
+<script src="js/three-scenes.js"></script>
+</body>
+</html>
